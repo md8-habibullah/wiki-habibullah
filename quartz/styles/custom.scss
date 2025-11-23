@@ -1,0 +1,52 @@
+@use "./base.scss";
+
+// put your custom CSS here!
+
+
+/* The Hacker LED */
+.hacker-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff41; /* Matrix Green */
+  border-radius: 50%;
+  margin-left: 8px;
+  vertical-align: middle;
+  
+  /* The "Breathing" Animation */
+  box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7);
+  animation: server-pulse 1.3s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes server-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 255, 65, 0); /* Expands and fades out */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 65, 0);
+  }
+}
+
+
+/* Make Callouts look like the Cards in your Portfolio */
+.callout {
+  background-color: #1e293b !important; /* Slate-800 (Lighter than background) */
+  border: 1px solid #334155; /* Slate-700 border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Make Code blocks look like "Tags" */
+code {
+  font-size: 0.85em;
+  color: var(--secondary) !important; /* Mint Green Text */
+  background: rgba(45, 212, 191, 0.1) !important; /* Very subtle mint background */
+  border-radius: 4px;
+  padding: 2px 5px;
+}
